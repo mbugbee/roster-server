@@ -6,7 +6,7 @@ var bodyParser	= require('body-parser');
 var mongoose	= require('mongoose');
 var Player		= require('./app/models/player');
 
-var port 		= 8080;
+var port 		= process.env.PORT || 8080;
 var mongoUser 	= process.env.MONGOLABS_USER;
 var mongoPW		= process.env.MONGOLABS_PW;
 
@@ -104,4 +104,3 @@ app.use('/api', router);
 // START SERVER ================================================
 app.listen(port);
 console.log('Good things happening on port ' + port);
-console.log(mongoUser + " " + mongoPW);
