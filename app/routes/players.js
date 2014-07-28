@@ -21,6 +21,7 @@ module.exports = function(app)
 	})
 
 	router.route('/players')
+		.options(cors())
 		.post(function (req, res){
 			var player = new Player();
 				player.name 	= req.body.name;
