@@ -4,8 +4,10 @@ module.exports = function(app)
 	var router 		= express.Router();
 	var Player		= require('../models/player');
 	var bodyParser	= require('body-parser');
+	var cors		= require('cors');
 
 	app.use(bodyParser());
+	app.use(cors());
 	
 	// route middleware
 	router.use(function (req, res, next) {
