@@ -10,8 +10,6 @@ module.exports = function(app)
 	// route middleware
 	router.use(function (req, res, next) {
 		console.log('Route Called');
-		res.header("Access-Control-Allow-Origin", "*");
-		res.header("Access-Control-Allow-Headers", "X-Requested-With");
 		next();
 	});
 
@@ -23,9 +21,8 @@ module.exports = function(app)
 	router.route('/players')
 		.post(function (req, res){
 			var player = new Player();
-			console.log(req);
-				player.number 	= req.body.number;
 				player.name 	= req.body.name;
+				player.number 	= req.body.number;
 				player.positon 	= req.body.position;
 				player.goals	= req.body.goals;
 				player.assists	= req.body.assists;
