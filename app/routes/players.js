@@ -10,6 +10,8 @@ module.exports = function(app)
 	// route middleware
 	router.use(function (req, res, next) {
 		console.log('Route Called');
+		res.header("Access-Control-Allow-Origin", "*");
+		res.header("Access-Control-Allow-Headers", "X-Requested-With");
 		next();
 	});
 
