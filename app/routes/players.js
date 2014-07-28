@@ -2,7 +2,11 @@ module.exports = function(app)
 {
 	var express		= require('express');
 	var router 		= express.Router();
+	var Player		= require('../models/player');
+	var bodyParser	= require('body-parser');
 
+	app.use(bodyParser());
+	
 	// route middleware
 	router.use(function (req, res, next) {
 		console.log('Route Called');
@@ -17,8 +21,9 @@ module.exports = function(app)
 	router.route('/players')
 		.post(function (req, res){
 			var player = new Player();
-				player.name 	= req.body.name;
+			console.log(req);
 				player.number 	= req.body.number;
+				player.name 	= req.body.name;
 				player.positon 	= req.body.position;
 				player.goals	= req.body.goals;
 				player.assists	= req.body.assists;
