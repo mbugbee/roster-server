@@ -36,7 +36,7 @@ router.route('/players')
 	.get(function(req, res) {
 		console.log(Player);
 		console.log(Player.find);
-        Player.find(function (err, players){
+        Player.find({}, function (err, players){
             console.log(err, players);
             if (err)
                 res.send(err);
