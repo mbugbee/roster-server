@@ -16,6 +16,7 @@ var connection = mongoose.connection;
 	connection.once('open', function() {
   		console.log('db connected');                         
 	});
+	connection.on('error', console.error.bind(console, 'connection error:'));
 
 app.use(bodyParser());
 app.use(cors());
