@@ -34,7 +34,7 @@ router.route('/players')
 	})
 
 	.get(function(req, res) {
-		console.log(Player);
+		/*console.log(Player);
 		console.log(Player.find);
         Player.find({}, function (err, players){
             console.log(err, players);
@@ -43,7 +43,8 @@ router.route('/players')
 
             console.log('resolving players');
             res.json(players);
-        });
+        });*/
+	res.json({message: 'LIST OF PLAYERS!'});
     });
 
 router.route('/players/:id')
