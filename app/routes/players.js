@@ -7,7 +7,7 @@ var cors		= require('cors');
 // route middleware
 router.use(function (req, res, next) {
 	console.log('Route Called');
-	app.use(cors());
+	router.use(cors());
 	next();
 });
 
