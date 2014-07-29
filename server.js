@@ -12,6 +12,10 @@ var mongoUser 	= process.env.MONGOLABS_USER;
 var mongoPW		= process.env.MONGOLABS_PW;
 
 mongoose.connect('mongodb://' + mongoUser + ':' + mongoPW + '@ds053459.mongolab.com:53459/roster');
+var connection = mongoose.connection;
+	connection.once('open', function() {
+  		console.log('db connected');                         
+	});
 
 app.use(bodyParser());
 app.use(cors());
