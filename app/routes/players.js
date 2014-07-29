@@ -1,13 +1,8 @@
-module.exports = function(app)
-{
 	var express		= require('express');
 	var router 		= express.Router();
 	var Player		= require('../models/player');
-	var bodyParser	= require('body-parser');
-	var cors		= require('cors');
 
-	app.use(bodyParser());
-	app.use(cors());
+	
 	
 	// route middleware
 	router.use(function (req, res, next) {
@@ -21,7 +16,6 @@ module.exports = function(app)
 	})
 
 	router.route('/players')
-		.options(cors())
 		.post(function (req, res){
 			var player = new Player();
 				player.name 	= req.body.name;
@@ -92,5 +86,6 @@ module.exports = function(app)
 			})
 		})
 
-	app.use('/api', router);
-}
+	//app.use('/api', router);
+
+module.exports.players = router;
