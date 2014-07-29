@@ -34,17 +34,15 @@ router.route('/players')
 	})
 
 	.get(function(req, res) {
-		/*console.log(Player);
-		console.log(Player.find);
+		res.header("Access-Control-Allow-Origin", "*"); 
+  		res.header("Access-Control-Allow-Headers", "X-Requested-With");
         Player.find({}, function (err, players){
-            console.log(err, players);
             if (err)
                 res.send(err);
 
             console.log('resolving players');
             res.json(players);
-        });*/
-	res.json({message: 'LIST OF PLAYERS!'});
+        });
     });
 
 router.route('/players/:id')
