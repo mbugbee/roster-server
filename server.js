@@ -7,8 +7,6 @@ var Player		= require('./app/models/player');
 var bodyParser	= require('body-parser');
 var cors		= require('cors');
 
-
-
 var port 		= process.env.PORT || 8080;
 var mongoUser 	= process.env.MONGOLABS_USER;
 var mongoPW		= process.env.MONGOLABS_PW;
