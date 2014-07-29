@@ -13,7 +13,14 @@ router.use(function (req, res, next) {
 
 // test route
 router.get('/', function (req, res){
-	res.json({message: 'Pow pow!'});
+	//res.json({message: 'Pow pow!'});
+	Player.find({}, function (err, players){
+        if (err)
+            res.send(err);
+
+        console.log('resolving players');
+        res.json(players);
+    });
 })
 
 router.route('/players')
@@ -34,8 +41,6 @@ router.route('/players')
 	})
 
 	.get(function(req, res) {
-		res.header("Access-Control-Allow-Origin", "*"); 
-  		res.header("Access-Control-Allow-Headers", "X-Requested-With");
         Player.find({}, function (err, players){
             if (err)
                 res.send(err);
