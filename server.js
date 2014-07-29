@@ -24,4 +24,4 @@ app.use('/api', require('./app/routes/players').players);
 
 // START SERVER ================================================
 app.listen(port);
-console.log('Good things happening on port ' + port + process.env.MONGOLABS_USER + mongoPW);
+console.log('Roster Server running on port ' + port);
