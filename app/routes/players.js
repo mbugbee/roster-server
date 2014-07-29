@@ -34,13 +34,15 @@ router.route('/players')
 	})
 
 	.get(function(req, res) {
-		Player.find(function (err, players){
-			if (err)
-				res.send(err);
+        Player.find(function (err, players){
+            console.log(err, players);
+            if (err)
+                res.send(err);
 
-			res.json(players);
-		});
-	});
+            console.log('resolving players');
+            res.json(players);
+        });
+    });
 
 router.route('/players/:id')
 	.get(function(req,res){
