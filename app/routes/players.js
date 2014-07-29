@@ -28,7 +28,7 @@ router.route('/players')
 		var player = new Player();
 			player.name 	= req.body.name;
 			player.number 	= req.body.number;
-			player.positon 	= req.body.position;
+			player.position	= req.body.position;
 			player.goals	= req.body.goals;
 			player.assists	= req.body.assists;
 
